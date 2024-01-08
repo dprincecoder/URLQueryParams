@@ -16,6 +16,7 @@ export default function Home() {
   }, []);
   return (
     <div className="m-12">
+      <h1 className="text-4xl font-bold mb-4">Home Page</h1>
       <SearchSortInput />
       <Suspense fallback={<div>Loading...</div>}>
         <DisplayData data={data} />

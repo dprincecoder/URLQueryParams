@@ -12,15 +12,6 @@ export default function Search() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const searchParams = new URLSearchParams();
-
-      if (q) {
-        searchParams.append("q", q);
-      }
-
-      if (sort) {
-        searchParams.append("sort", sort);
-      }
       const response = await fetch(`/api/users`);
       const data = await response.json();
 
@@ -36,6 +27,8 @@ export default function Search() {
 
         "
     >
+      <h1 className="text-4xl font-bold mb-4">Search Page</h1>
+
       <SearchSortInput />
       {q && (
         <h3 className="text-2xl font-bold mb-4">Search results for: {q}</h3>

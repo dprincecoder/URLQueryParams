@@ -1,15 +1,15 @@
 "use client";
 
 export default function DisplayData({ data, q, sort }) {
-  const searchandSort = (data, q, sort) => {
+  const filteredData = () => {
     let newData = [...data];
+
     if (q) {
-      newData = data.filter((item) => {
-        return (
+      newData = newData.filter(
+        (item) =>
           item.name.toLowerCase().includes(q.toLowerCase()) ||
           item.username.toLowerCase().includes(q.toLowerCase())
-        );
-      });
+      );
     }
 
     if (sort) {
@@ -31,8 +31,6 @@ export default function DisplayData({ data, q, sort }) {
     return newData;
   };
 
-  const filteredData = searchandSort(data, q, sort);
-
   return (
     <div className="flex flex-col items-center">
       <h1
@@ -43,7 +41,7 @@ export default function DisplayData({ data, q, sort }) {
         My Feed
       </h1>
       <ul className="grid grid-cols-4 mx-auto max-w-[1260px] gap-10"></ul>
-      {filteredData.map((item) => (
+      {filteredData().map((item) => (
         <ul
           key={item.id}
           className="flex border border-gray-300 p-4 rounded w-[600px] mb-4 gap-4"
