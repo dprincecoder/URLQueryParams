@@ -46,9 +46,13 @@ export default function DisplayData({ data, q, sort }) {
           key={item.id}
           className="flex border border-gray-300 p-4 rounded w-[600px] mb-4 gap-4"
         >
-          <h3 className="text-lg font-semibold mb-2">{item.name}</h3>
-          <p className="text-gray-500">Username: {item.username}</p>
-          <p className="text-gray-500">Email: {item.email}</p>
+          <h3 className="text-lg font-bold mb-2">{item.name}</h3>
+          <p className="text-gray-500 font-semibold text-[16px]">
+            Username: {item.username}
+          </p>
+          <p className="text-gray-500 font-semibold text-[16px]">
+            Email: {item.email}
+          </p>
         </ul>
       ))}
     </div>

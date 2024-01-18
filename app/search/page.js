@@ -31,9 +31,11 @@ export default function Search() {
 
       <SearchSortInput />
       {q && (
-        <h3 className="text-2xl font-bold mb-4">Search results for: {q}</h3>
+        <h3 className="text-[18px] font-bold mb-4">Search results for: {q}</h3>
       )}
-      {sort && <p className="text-[14px] mb-4">Sorted by: {sort}</p>}
+      {sort && (
+        <p className="text-[16px] mb-4 font-semibold">Sorted by: {sort}</p>
+      )}
       <Suspense fallback={<div>Loading...</div>} key={q}>
         <DisplayData data={data} sort={sort} q={q} />
       </Suspense>

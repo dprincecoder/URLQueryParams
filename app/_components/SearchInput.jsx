@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import { useMemo } from "react";
@@ -35,17 +36,17 @@ const SearchSortInput = () => {
 
   return (
     <div className="flex items-center space-x-4 mb-4">
-      <button
-        onClick={() => router.push("/")}
-        className="border border-gray-300 p-2 rounded text-black border-black"
+      <Link
+        href={"/"}
+        className="border border-gray-300 p-2 rounded text-black border-black "
       >
         Home
-      </button>
+      </Link>
 
       <form
         onSubmit={handleSubmit}
         className="
-        flex items-center space-x-4 mb-4 mx-auto
+        flex items-center space-x-4 mx-auto
       "
       >
         <input
@@ -53,9 +54,7 @@ const SearchSortInput = () => {
           placeholder="Search..."
           name="search"
           key={query || ""}
-          // value={searchTerm}
           defaultValue={query || ""}
-          // onChange={handleSearch}
           className="border border-gray-300 p-2 rounded text-black border-black"
         />
         <button
